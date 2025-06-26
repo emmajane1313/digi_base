@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "Druk";
+  font-weight: 400;
+  src: url("/fonts/druk.otf");
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "Letter Magic";
+  font-weight: 400;
+  src: url("/fonts/Letter Magic.ttf");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@font-face {
+  font-family: "Internal Rainbows";
+  font-weight: 400;
+  src: url("/fonts/Internal Rainbows.otf");
+}
+
+
+@font-face {
+  font-family: "Sang";
+  font-weight: 400;
+  src: url("/fonts/sang.ttf");
+}
+
+@theme {
+  --color-offBlack: #111313;
+  --color-offBlue: #01030c;
+  --color-offWhite: #faf4e8;
+
+  --font-druk: "Druk";
+  --font-sang: "Sang";
+  --font-mag: "Letter Magic";
+  --font-rain: "Internal Rainbows";
+
+  --breakpoint-app: 900px;
+
+  --cursor-sewingS: url("https://thedial.infura-ipfs.io/ipfs/QmToSnjBTxyQgVAGGWyXsrZQ3WSvHVAJUyBz4EzXWAqKTj"),
+    auto;
+  --cursor-sewingHS: url("https://thedial.infura-ipfs.io/ipfs/Qmb79KwJPZtvKXhXpHBrFJKkM2gpk29boL5kPehrF6FaC1"),
+    pointer;
+}
+
+@layer utilities {
+  .font-sang {
+    font-family: var(--font-sang);
+  }
+  .font-mag {
+    font-family: var(--font-mag);
+  }
+  .font-druk {
+    font-family: var(--font-druk);
+  }
+   .font-rain {
+    font-family: var(--font-rain);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  cursor: var(--cursor-sewingS);
+  background: var(--color-offWhite);
+  color: var(--color-offBlack);
+  font-family: var(--font-mag);
 }

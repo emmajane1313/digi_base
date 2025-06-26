@@ -1,103 +1,160 @@
-import Image from "next/image";
+"use client";
+
+import { useRouter } from "next/navigation";
+import Wrapper from "./components/Wrapper";
+import { useState } from "react";
+import { TIMELINE } from "./lib/constantes";
+import { LiaArrowAltCircleLeft, LiaArrowAltCircleRight } from "react-icons/lia";
 
 export default function Home() {
+  const router = useRouter();
+  const [indice, setIndice] = useState<number>(0);
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <Wrapper>
+      <div className="relative w-full h-fit flex flex-col app:flex-row justify-between items-center sm:gap-0 gap-5">
+        <div className="relative w-full h-fit flex">
+          <div className="absolute left-2 -bottom-20 w-fit h-fit flex flex-col text-left">
+            {[
+              { texto: "CC0", color: "#58b5f5" },
+              { texto: "On-Chain", color: "#ce02cb" },
+              { texto: "$MONA", color: "#46b171" },
+              { texto: "FGO", color: "#ffd85f" },
+              { texto: "GenAI", color: "#3cfdf6" },
+              {
+                texto: "TripleA",
+                color: "#0035f2",
+                enlace: "https://triplea.agentmeme.xyz/",
+              },
+              {
+                texto: "Skyhunters",
+                color: "#0035f2",
+                enlace: "https://skyhunters.agentmeme.xyz/",
+              },
+              {
+                texto: "Cypher Search",
+                color: "#0035f2",
+                enlace: "https://cypher.digitalax.xyz/",
+              },
+              {
+                texto: "Chromadin",
+                color: "#0035f2",
+                enlace: "https://www.chromadin.xyz/",
+              },
+              {
+                texto: "Kinora",
+                color: "#0035f2",
+                enlace: "https://kinora.irrevocable.dev/",
+              },
+              {
+                texto: "Listener",
+                color: "#0035f2",
+                enlace: "https://listener.irrevocable.dev/",
+              },
+              {
+                texto: "Coin Op",
+                color: "#0035f2",
+                enlace: "https://coinop.themanufactory.xyz/",
+              },
+              {
+                texto: "NPC Studio",
+                color: "#0035f2",
+                enlace: "https://npcstudio.xyz/",
+              },
+              {
+                texto: "The Manufactory",
+                color: "#0035f2",
+                enlace: "https://themanufactory.xyz/",
+              },
+            ].map((el, i) => (
+              <div
+                key={i}
+                className={`relative w-fit h-fit flex ${
+                  el.enlace && "cursor-sewingHS"
+                }`}
+                onClick={() => el.enlace && window.open(el.enlace)}
+                style={{
+                  color: el.color,
+                }}
+              >
+                {el.texto}
+              </div>
+            ))}
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div className="relative w-full h-fit flex flex-col items-center justify-center">
+          <div className="font-druk w-fit h-fit relative text-center">
+            The Temporal Seams of Web3 Fashion
+          </div>
+          <div className="relative w-fit h-fit flex">
+            <video
+              draggable={false}
+              autoPlay
+              poster="/images/seams.png"
+              loop
+              muted
+              className="relative flex w-60 h-60 border border-offBlack object-cover"
+            >
+              <source src="/videos/seams.mp4" />
+            </video>
+          </div>
+
+          <div className="relative w-fit h-fit flex flex-row gap-2 mt-4">
+            <LiaArrowAltCircleLeft
+              size={20}
+              className="cursor-sewingHS"
+              onClick={() => indice > 0 && setIndice((prev) => prev - 1)}
+              color="#111313"
+            />
+
+            <LiaArrowAltCircleRight
+              className="cursor-sewingHS"
+              onClick={() =>
+                indice < TIMELINE.length - 1 && setIndice((prev) => prev + 1)
+              }
+              size={20}
+              color="#111313"
+            />
+          </div>
+        </div>
+
+        <div
+          className="relative h-full flex flex-col gap-1 w-full font-din text-sm items-end justify-end"
+          id="coined"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <div className="relative w-fit h-fit flex mb-4">
+            <div
+              className="w-fit h-fit px-2 py-1 border border-black rounded-full flex text-center cursor-sewingHS"
+              onClick={() => router.push("/about")}
+            >
+              <div className="w-fit h-fit px-3 py-1 border border-black rounded-full flex text-center">
+                About
+              </div>
+            </div>
+          </div>
+
+          <div className="text-6xl font-extrabold tracking-tight text-[#ce02cb] mb-2">
+            Est.
+          </div>
+          <div className="text-6xl font-extrabold tracking-tight text-[#ce02cb] mb-2">
+            2020
+          </div>
+
+          <div
+            className="relative w-fit h-full flex cursor-sewingHS"
+            onClick={() =>
+              window.open("https://cypher.digitalax.xyz/autograph/digitalax")
+            }
+          >
+            Follow on Lens.
+          </div>
+          <div
+            className="relative w-fit h-full flex cursor-sewingHS"
+            onClick={() => window.open("https://github.com/digitalax")}
+          >
+            Coding here.
+          </div>
+        </div>
+      </div>
+    </Wrapper>
   );
 }

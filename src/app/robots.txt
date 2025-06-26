@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://emmajanemackinnonlee-digitalax.com/sitemap.xml
