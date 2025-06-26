@@ -1,7 +1,141 @@
-export const TIMELINE = [
-
-    {
-        sana: "Aug. 2020",
-        
-    }
-]
+export const TIMELINE: {
+  ism: string;
+  sana: string;
+  aen: string;
+  fideo: string;
+  cartel: string;
+}[] = [
+  {
+    ism: "DIGITALAX goes live",
+    sana: "August 2020",
+    aen: "The first version of the protocol launched. Early, raw, but real. Fashion onchain stopped being just a concept.",
+    fideo: "/videos/seams.mp4",
+    cartel: "/images/seams.png",
+  },
+  {
+    ism: "MONA + DOF Sheet",
+    sana: "October 2020",
+    aen: "The MONA token launched. It came with the DOF Sheet, laying the groundwork for how wardrobe logic could run onchain.",
+    fideo: "/videos/dofsheet.mp4",
+    cartel: "/images/dofsheet.png",
+  },
+  {
+    ism: "Staking, GDN, and first experiments",
+    sana: "Nov–Dec 2020",
+    aen: "We launched the Global Designer Network, ran the first NFT auctions with staking, and introduced early ideas around shared ownership with FGO and PODE. A lot at once, and not everything worked. But that wasn’t the point.",
+    fideo: "/videos/coser.mp4",
+    cartel: "/images/coser.png",
+  },
+  {
+    ism: "FGO, ESPA & file formats",
+    sana: "Jan–Feb 2021",
+    aen: "We kept pushing onchain ownership—FGO got its first standard, ESPA launched for indie game modding, and the DASH file format started taking shape. Still early infrastructure, but it started to feel usable.",
+    fideo: "/videos/sketch.mp4",
+    cartel: "/images/sketch.png",
+  },
+  {
+    ism: "Skins, staking & DRIP",
+    sana: "Mar–Apr 2021",
+    aen: "NFT wearables hit games—Among Us mods, in-game staking, and the first DRIP hybrid collections connected onchain fashion with physical drops.",
+    fideo: "/videos/coin.mp4",
+    cartel: "/images/coin.png",
+  },
+  {
+    ism: "DIGIFIZZY & Web3 Fashion Week",
+    sana: "May–Aug 2021",
+    aen: "We published DIGIFIZZY, launched creator tools, brought GDN DAO onchain, and ran the first Web3 Fashion Week. The space started feeling real—not polished, but full of friction in the right direction.",
+    fideo: "/videos/w3fw.mp4",
+    cartel: "/images/w3fw.png",
+  },
+  {
+    ism: "NYFW, GMS & realm-based modeling",
+    sana: "Feb–Mar 2022",
+    aen: "We showed up at New York Fashion Week with Realm. GMS launched as a coordination layer for modals, and IRL x digital model drops started connecting different parts of the pipeline.",
+    fideo: "/videos/gms.mp4",
+    cartel: "/images/gms.png",
+  },
+  {
+    ism: "CC0 DAO & composable machines",
+    sana: "Mar–May 2022",
+    aen: "We launched the CC0 DAO with daily auctions, and dropped the V3 whitepaper around open composable machines. Ownership structures kept opening up—less licensing, more permissionless remixing.",
+    fideo: "/videos/alley.mp4",
+    cartel: "/images/alley.png",
+  },
+  {
+    ism: "Anti-inflation mixtapes & open tooling",
+    sana: "Jun–Oct 2022",
+    aen: "At NFT NYC, we released The Sticky—a indie street/skater film leaning into anti-inflation culture. GenAI tooling for creators started landing, with Chromadin going live soon after as a 24/7 stream/storefront.",
+    fideo: "/videos/explode.mp4",
+    cartel: "/images/explode.png",
+  },
+  {
+    ism: "The Dial goes live",
+    sana: "January 2023",
+    aen: "We launched The Dial Pirate Radio inside Chromadin—low-latency broadcasts, always-on. Less campaign, more signal. A layer for sound, story, and cultural sync.",
+    fideo: "/videos/chroma.mp4",
+    cartel: "/images/chroma.png",
+  },
+  {
+    ism: "Microbrands and Lit tooling",
+    sana: "September 2023",
+    aen: "Microbrands launched as sovereign drops—creator-owned, not just creator-branded. Lit integrations added PKP, ListenerSDK, and storefronts to extend coordination at the edge.",
+    fideo: "/videos/laugh.mp4",
+    cartel: "/images/laugh.png",
+  },
+  {
+    ism: "The Manufactory & Coin Op",
+    sana: "October 2023",
+    aen: "We launched The Manufactory—a decentralized, local-first production network. Coin Op followed right after: GenAI fashion tools running on Lens, fully DIY and remixable.",
+    fideo: "/videos/factory.mp4",
+    cartel: "/images/factory.png",
+  },
+  {
+    ism: "Cypher tools on Lens",
+    sana: "January–March 2024",
+    aen: "Cypher Search and NPC Studio launched—one focused on navigating Lens-native fashion intelligence, the other building environments for NPC-led storytelling.",
+    fideo: "/videos/car.mp4",
+    cartel: "/images/car.png",
+  },
+  {
+    ism: "The Autograph & spectators",
+    sana: "April–August 2024",
+    aen: "NPC Studio evolved with The Autograph Quarterly and new spectator modes. Autonomous agents started becoming part of the show, not just the backend.",
+    fideo: "/videos/lean.mp4",
+    cartel: "/images/lean.png",
+  },
+  {
+    ism: "Kinora & Triple A",
+    sana: "December 2024",
+    aen: "Kinora launched with Livepeer—mission-based video storefronts. Triple A followed: an agentic fashion market on Venice.ai. Less static storefront, more living protocol.",
+    fideo: "/videos/flash.mp4",
+    cartel: "/images/flash.png",
+  },
+  {
+    ism: "Lucidity & agentic workflows",
+    sana: "March 2025",
+    aen: "Lucidity launched as an exploration tool using ComfyUI. Not just gen, but decision flow—designed for agentic coordination more than pure output.",
+    fideo: "/videos/machine.mp4",
+    cartel: "/images/machine.png",
+  },
+  {
+    ism: "$MONA bridge to Lens",
+    sana: "April 2025",
+    aen: "The bridge between Ethereum Mainnet and Lens went live for $MONA.",
+    fideo: "/videos/spin.mp4",
+    cartel: "/images/spin.png",
+  },
+  {
+    ism: "Lens V3 refactor",
+    sana: "June 2025",
+    aen: "All apps rebuilt for Lens V3 on ZK Sync. Essential for a leaner stack, faster flows, and space for the next wave.",
+    fideo: "/videos/studio.mp4",
+    cartel: "/images/studio.png",
+  },
+  {
+    ism: "Skyhunters",
+    sana: "Now 2025",
+    aen: "Agentic liquidity hunters cross-chain, new DeFi tooling for indie designers. Currently in development.",
+    fideo: "/videos/conveyer.mp4",
+    cartel: "/images/conveyer.png",
+  },
+];

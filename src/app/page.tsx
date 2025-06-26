@@ -2,18 +2,35 @@
 
 import { useRouter } from "next/navigation";
 import Wrapper from "./components/Wrapper";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TIMELINE } from "./lib/constantes";
 import { LiaArrowAltCircleLeft, LiaArrowAltCircleRight } from "react-icons/lia";
 
 export default function Home() {
   const router = useRouter();
   const [indice, setIndice] = useState<number>(0);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft" && indice > 0) {
+        setIndice((prev) => prev - 1);
+      }
+      if (event.key === "ArrowRight" && indice < TIMELINE.length - 1) {
+        setIndice((prev) => prev + 1);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [indice]);
+
   return (
     <Wrapper>
-      <div className="relative w-full h-fit flex flex-col app:flex-row justify-between items-center sm:gap-0 gap-5">
+      <div className="relative w-full h-fit flex flex-col app:flex-row justify-between items-center sm:gap-0 gap-5 app:my-0 my-6">
         <div className="relative w-full h-fit flex">
-          <div className="absolute left-2 -bottom-20 w-fit h-fit flex flex-col text-left">
+          <div className="relative app:absolute app:left-2 app:-bottom-20 w-fit h-fit flex flex-col text-left app:text-base text-xs">
             {[
               { texto: "CC0", color: "#58b5f5" },
               { texto: "On-Chain", color: "#ce02cb" },
@@ -89,31 +106,45 @@ export default function Home() {
             <video
               draggable={false}
               autoPlay
-              poster="/images/seams.png"
+              poster={TIMELINE[indice]?.cartel}
               loop
+              key={TIMELINE[indice]?.fideo}
               muted
               className="relative flex w-60 h-60 border border-offBlack object-cover"
             >
-              <source src="/videos/seams.mp4" />
+              <source src={TIMELINE[indice]?.fideo} />
             </video>
           </div>
-
-          <div className="relative w-fit h-fit flex flex-row gap-2 mt-4">
-            <LiaArrowAltCircleLeft
-              size={20}
-              className="cursor-sewingHS"
-              onClick={() => indice > 0 && setIndice((prev) => prev - 1)}
-              color="#111313"
-            />
-
-            <LiaArrowAltCircleRight
-              className="cursor-sewingHS"
-              onClick={() =>
-                indice < TIMELINE.length - 1 && setIndice((prev) => prev + 1)
-              }
-              size={20}
-              color="#111313"
-            />
+          <div className="relative w-fit h-60 flex flex-col gap-3 items-center text-center justify-center">
+            <div className="relative w-full items-center justify-center h-fit flex text-sm font-mag uppercase">
+              {TIMELINE[indice]?.ism}
+            </div>
+            <div className="relative w-60 h-fit flex text-sm font-druk uppercase">
+              {TIMELINE[indice]?.aen}
+            </div>
+            <div className="relative w-fit h-fit flex flex-row gap-2 mt-4">
+              <LiaArrowAltCircleLeft
+                size={20}
+                className={` ${indice == 0 ? "opacity-70" : "cursor-sewingHS"}`}
+                onClick={() => indice > 0 && setIndice((prev) => prev - 1)}
+                color="#111313"
+              />
+              <div className="relative text-sm w-fit h-fit">
+                {TIMELINE[indice]?.sana}
+              </div>
+              <LiaArrowAltCircleRight
+                className={` ${
+                  indice == TIMELINE.length - 1
+                    ? "opacity-70"
+                    : "cursor-sewingHS"
+                }`}
+                onClick={() =>
+                  indice < TIMELINE.length - 1 && setIndice((prev) => prev + 1)
+                }
+                size={20}
+                color="#111313"
+              />
+            </div>
           </div>
         </div>
 

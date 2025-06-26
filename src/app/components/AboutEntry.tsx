@@ -6,9 +6,9 @@ import { FunctionComponent } from "react";
 const AboutEntry: FunctionComponent = () => {
   const router = useRouter();
   return (
-    <div className="relative w-full h-fit flex flex-col app:flex-row justify-between items-center sm:gap-0 gap-5">
+    <div className="relative w-full h-fit flex flex-col app:flex-row justify-between items-center sm:gap-0 gap-5 app:my-0 my-6">
       <div className="relative w-full h-fit flex">
-        <div className="absolute left-2 -bottom-20 w-60 text-sm h-fit text-left">
+        <div className="relative app:absolute app:left-2 app:-bottom-20 w-60 text-sm h-fit text-left">
           I founded DIGITALAX in mid-2020, launching the first Web3 fashion
           protocol on Ethereum. Since then, our contracts have expanded across
           Ethereum Mainnet, Polygon, and Lens ZK. I design, code, build, and
