@@ -72,6 +72,11 @@ export default function Home() {
                 color: "#0035f2",
                 enlace: "https://coinop.themanufactory.xyz/",
               },
+                {
+                texto: "GDN",
+                color: "#0035f2",
+                enlace: "https://globaldesignernetwork.com/",
+              },
               {
                 texto: "NPC Studio",
                 color: "#0035f2",
@@ -81,6 +86,16 @@ export default function Home() {
                 texto: "The Manufactory",
                 color: "#0035f2",
                 enlace: "https://themanufactory.xyz/",
+              },
+              {
+                texto: "FGO",
+                color: "#0035f2",
+                enlace: "https://fgo.themanufactory.xyz/",
+              },
+              {
+                texto: "FGO Futures",
+                color: "#0035f2",
+                enlace: "https://futures.themanufactory.xyz/",
               },
             ].map((el, i) => (
               <div
@@ -119,7 +134,7 @@ export default function Home() {
             <div className="relative w-full items-center justify-center h-fit flex text-sm font-mag uppercase">
               {TIMELINE[indice]?.ism}
             </div>
-            <div className="relative w-60 h-fit flex text-sm font-druk uppercase">
+            <div className="relative w-60 h-fit flex text-sm font-druk uppercase text-center">
               {TIMELINE[indice]?.aen}
             </div>
             <div className="relative w-fit h-fit flex flex-row gap-2 mt-4">
